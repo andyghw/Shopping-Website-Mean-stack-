@@ -1,0 +1,31 @@
+nav {
+  background-color: red;
+  color: gainsboro; }
+  nav a {
+    padding-left: 13em; }
+    nav a:hover {
+      color: black;
+      cursor: pointer; }
+
+.title {
+  text-align: left;
+  height: 6em;
+  background-color: dodgerblue;
+  padding-left: 5em;
+  padding-top: 2em;
+  padding-right: 10em; }
+  .title a {
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white; }
+    .title a:hover {
+      color: red;
+      cursor: pointer; }
+
+#searchArea {
+  float: right; }
+  #searchArea input {
+    width: 30em; }
+  #searchArea button:hover {
+    cursor: pointer; }
