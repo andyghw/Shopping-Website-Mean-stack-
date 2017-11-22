@@ -4,7 +4,8 @@ const bodyParser=require('body-parser');
 const cors=require('cors');
 const passport=require('passport');
 const mongoose=require('mongoose');
-const config=require('./config/database')
+const config=require('./config/database-users');
+
 
 //连接到database
 mongoose.connect(config.database);
@@ -19,7 +20,9 @@ mongoose.connection.on('error',(err) =>{
 
 const app=express();
 
-const users = require('./routes/users')
+const users = require('./routes/users');
+
+const products=require('./routes/products')
 
 //Port num
 const port=3000;
@@ -36,12 +39,14 @@ app.use(bodyParser.json());
 //Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 require('./config/passport')(passport);
 
 
 
 app.use('/users',users);
+app.use('/products',products);
+
+
 
 //Index Route
 app.get('/', (req,res) =>{

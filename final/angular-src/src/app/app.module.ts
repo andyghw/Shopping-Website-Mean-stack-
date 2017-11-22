@@ -11,6 +11,11 @@ import {FormsModule} from "@angular/forms";
 import { RegisterComponent } from './components/register/register.component';
 import {ValidateService} from "./services/validate.service";
 import {FlashMessagesModule} from "angular2-flash-messages";
+import {AuthService} from "./services/auth.service";
+import {HttpModule} from "@angular/http";
+import { ProfileComponent } from './components/profile/profile.component';
+import {AuthGuard} from "./guard/auth.guard";
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 
 @NgModule({
@@ -20,21 +25,25 @@ import {FlashMessagesModule} from "angular2-flash-messages";
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'navbar', component: NavbarComponent},
       {path: 'login', component: LoginComponent},
-      {path:'dashboard',component:DashboardComponent},
-      {path:'register',component:RegisterComponent}
+      {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+      {path:'register',component:RegisterComponent},
+      {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]}
     ]),
     FlashMessagesModule
   ],
-  providers: [ValidateService],
+  providers: [ValidateService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
