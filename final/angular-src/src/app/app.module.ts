@@ -16,6 +16,9 @@ import {HttpModule} from "@angular/http";
 import { ProfileComponent } from './components/profile/profile.component';
 import {AuthGuard} from "./guard/auth.guard";
 import { ProductListComponent } from './components/product-list/product-list.component';
+import {SearchFilterPipe} from "./components/search-filter/search-filter.pipe";
+import {DataService} from "./services/data.service";
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
     DashboardComponent,
     RegisterComponent,
     ProfileComponent,
-    ProductListComponent
+    ProductListComponent,
+    SearchFilterPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +44,13 @@ import { ProductListComponent } from './components/product-list/product-list.com
       {path: 'login', component: LoginComponent},
       {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
       {path:'register',component:RegisterComponent},
-      {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]}
+      {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+      {path:'productList',component:ProductListComponent},
+      {path:'search',component:SearchComponent}
     ]),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthGuard,AuthService],
+  providers: [ValidateService,AuthGuard,AuthService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
