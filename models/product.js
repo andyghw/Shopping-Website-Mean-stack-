@@ -25,12 +25,12 @@ const  Product=module.exports=mongoose.model('Product',ProductSchema);
 
 module.exports.getProductById=function (id, callback) {
     Product.findById(id,callback);
-}
+};
 
 module.exports.getProductByName=function (name, callback) {
     const  query={name: name}
     Product.findOne(query, callback);
-}
+};
 
 // module.exports.addUser=function (newUser,callback) {
 //     bcrypt.genSalt(10,(err,salt)=>{

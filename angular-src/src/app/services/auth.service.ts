@@ -14,7 +14,7 @@ export class AuthService {
   registerUser(user){
     let headers=new Headers();
     headers.append('Content-Ytpe','application/json');
-    return this.http.post('http://localhost:3000/users/register',user,{headers:headers}).map(res => res.json());
+    return this.http.post('http://localhost:3000/users/register',user,{headers:headers}).map(res => res.json());//send object to server
   }
 
   authenticateUser(user){

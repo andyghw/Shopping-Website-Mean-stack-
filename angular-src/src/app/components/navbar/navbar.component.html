@@ -16,10 +16,10 @@
       </div>
     </li>
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="authService.loggedIn()">
-      <a class="nav-link" [routerLink]="['/Cart']">View Cart</a>
+      <a class="nav-link" [routerLink]="['/cart']">View Cart<span class="badge">{{session}}</span></a>
     </li>
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="authService.loggedIn()">
-      <a class="nav-link" [routerLink]="['/Bookmark']">View Bookmark</a>
+      <a class="nav-link" [routerLink]="['/bookmark']">View Bookmark</a>
     </li>
   </ul>
   <ul class="nav navbar-nav">
