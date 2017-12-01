@@ -1,0 +1,22 @@
+<div *ngIf="user">
+  <table border="1">
+    <tr>
+    <th>item</th>
+    <th>name</th>
+    <th>location</th>
+      <th>Qty</th>
+      <th>operation</th>
+  </tr>
+  <tr *ngFor="let item of user.cartcontent">
+        <td><img data-src="{{item.image}}" alt="Card image cap" style="width: 100px;height: 60px"></td>
+        <td><a>{{item.name}}</a></td>
+        <td><p>{{item.location}}</p></td>
+    <td><input [(ngModel)]="item.Qty">price:{{item.price|currency}}total:{{item.price*item.Qty|currency}}</td>
+        <!--<Qty-add-dec [Qty]="1" [Price]="item.price" (QtyChange)="Qty=$event" [allPrice]="item.price"></Qty-add-dec>-->
+        <td>delete</td>
+  </tr>
+  </table>
+  <p>total items:{{total()|currency}}</p>
+  <p>total:</p>
+</div>
+
