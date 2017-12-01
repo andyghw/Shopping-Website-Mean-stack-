@@ -1,9 +1,17 @@
-// const mongoose=require('mongoose');
-// const  Product=mongoose.model('Product');
+const mongoose=require('mongoose');
+const  Product=mongoose.model('Product');
 
 
 
+module.exports.getProductById=function (id, callback) {
+    console.log(id);
+    Product.findById(mongoose.Types.ObjectId(id),callback);//Transfer string to objectid
+};
 
+module.exports.getProductByName=function (name, callback) {
+    const  query={name: name};
+    Product.findOne(query, callback);
+};
 // module.exports.addUser=function (newUser,callback) {
 //     bcrypt.genSalt(10,(err,salt)=>{
 //         bcrypt.hash(newUser.password,salt,(err,hash)=>{

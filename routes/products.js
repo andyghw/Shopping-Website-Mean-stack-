@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 
-const  productservice=require('../models/product');
+const  Product=require('../models/product');
 
 //get data
 router.get('/',(req,res) =>{
-    productservice.find({}).exec((err,products)=>{
+    Product.find({}).exec((err,products)=>{
         if(err){
             console.log(err);
         }

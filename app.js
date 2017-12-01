@@ -19,6 +19,9 @@ mongoose.connection.on('error',(err) =>{
 
 const app=express();
 
+require("./models/user");
+require("./models/product");
+
 const users = require('./routes/users');
 
 const products=require('./routes/products');

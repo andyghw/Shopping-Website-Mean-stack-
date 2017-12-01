@@ -4,11 +4,9 @@ const passport=require('passport');
 const jwt=require('jsonwebtoken');
 const config=require('../config/database-users');
 
-
-
-const Product=require('../models/product');
-const User=require('../models/user');
-
+const Productservice=require('../services/product-service');
+const Userservice=require('../services/user-service');
+const User=require('../models/user')
 //register
 router.post('/register', (req,res,next) =>{
     let newUser = new User({
@@ -17,7 +15,7 @@ router.post('/register', (req,res,next) =>{
         username:req.body.username,
         password:req.body.password
     });
-    User.addUser(newUser, (err,user)=>{
+    Userservice.addUser(newUser, (err,user)=>{
         if(err){
             res.json({success:false,msg:'Failed to register new user'});
         }
@@ -32,13 +30,13 @@ router.post('/authenticate', (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    User.getUserByUsername(username, (err, user) => {
+    Userservice.getUserByUsername(username, (err, user) => {
         if(err) throw err;
         if(!user){
             return res.json({success: false, msg: 'User not found'});
         }
 
-        User.comparePassword(password, user.password, (err, isMatch) => {
+        Userservice.comparePassword(password, user.password, (err, isMatch) => {
             if(err) throw err;
             if(isMatch){
                 const token = jwt.sign(user.toJSON(), config.secret, {
@@ -68,7 +66,7 @@ router.get('/profile', passport.authenticate('jwt',{session:false}),(req,res,nex
 });
 //add to cart
 router.put('/add-to-cart/:name',(req, res, next) =>{
-    Product.getProductByName(req.params.name,function (err,product) {
+    Productservice.getProductByName(req.params.name,function (err,product) {
                     if(err){
                         return err
                     }
@@ -81,7 +79,7 @@ router.put('/add-to-cart/:name',(req, res, next) =>{
                         cartcontent:req.body.cartcontent
                     });
 
-                    User.addItemInUser(user,product,function (err) {
+                    Userservice.addItemInUser(user,product,function (err) {
                         if(err){
                             return err
                         }
