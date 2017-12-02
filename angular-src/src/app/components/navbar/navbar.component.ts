@@ -46,18 +46,18 @@ export class NavbarComponent implements OnInit {
     });
     this.router.navigate(['/login'])
   }
-  onClickCart(){
-
-    this.cartService.GoToCart().subscribe(data => {
-      if(data.success){
-        console.log(1)
-        //this.flashMessagesService.show('Added successfully!',{cssClass:'alert-success',timeout:3000});
-      }
-      else{
-        console.log(0)
-        //this.flashMessagesService.show('Something unexpected happened.',{cssClass:'alert-danger',timeout:3000});
-      }
-      this.router.navigate(['/productList']);
-    });
-  }
+  // onClickCart(){
+  //
+  //   this.cartService.GoToCart().subscribe(data => {
+  //     if(data.success){
+  //       console.log(1)
+  //       //this.flashMessagesService.show('Added successfully!',{cssClass:'alert-success',timeout:3000});
+  //     }
+  //     else{
+  //       console.log(0)
+  //       //this.flashMessagesService.show('Something unexpected happened.',{cssClass:'alert-danger',timeout:3000});
+  //     }
+  //     this.router.navigate(['/productList']);
+  //   });
+  // }
 }

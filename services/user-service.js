@@ -23,7 +23,7 @@ module.exports.addUser=function (newUser,callback) {
         });
     });
 };
-module.exports.addItemInUser=function (user,product,callback) {
+module.exports.addItemInUser=function (user,product,callback) {//push an item to user's cart in mongodb
     User.update(
         {_id:user.id},
         {$push:{
@@ -42,7 +42,7 @@ module.exports.addItemInUser=function (user,product,callback) {
 };
 module.exports.updateItemInUser=function (user,product,callback) {
     // User.updateOne(
-    //     {name:user.name,"cartcontent.name":product.name},
+    //     {name:user.name,"cartcontent.name":product.name},//this statement never worked in js,but worked well in mongoshell.
     //     {
     //         $inc:{
     //             cartcontent:{
@@ -52,12 +52,18 @@ module.exports.updateItemInUser=function (user,product,callback) {
     //
     //     },callback
     // );
-    User.update({"name":"Ruixin Li"}, {$inc:{"s":3}},callback);
+    //User.update({"name":"Ruixin Li"}, {$inc:{"s":3}},callback);
 };
 
-module.exports.checkItem=function (productname,username,callback) {
+module.exports.checkItem=function (productname,username,callback) {//check if user has this item in his cart
     const  query={productname: productname};
-    User.find({"name":username,"cartcontent.name":productname},callback);
+    User.find({"name":username,"cartcontent.name":productname},callback);//mongo statement
+};
+module.exports.deleteItem=function (productName,name,callback) {//delete an object in a particular field.
+    User.update(
+        {"name":name},
+        {$pull:{"cartcontent":{"name":productName}}
+        },callback);
 };
 module.exports.comparePassword=function (candidatePassword,hash,callback) {
     bcrypt.compare(candidatePassword,hash,(err,isMatch)=>{

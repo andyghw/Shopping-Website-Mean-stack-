@@ -6,7 +6,7 @@ const config=require('../config/database-users');
 
 const Productservice=require('../services/product-service');
 const Userservice=require('../services/user-service');
-const User=require('../models/user')
+const User=require('../models/user');
 //register
 router.post('/register', (req,res,next) =>{
     let newUser = new User({
@@ -65,8 +65,8 @@ router.get('/profile', passport.authenticate('jwt',{session:false}),(req,res,nex
     res.json({user:req.user});
 });
 //add to cart
-router.put('/add-to-cart/:name',(req, res, next) =>{
-    Productservice.getProductByName(req.params.name,function (err,product) {
+router.put('/add-to-cart/:name',(req, res, next) =>{// this way could get data by url,"PUT" and "POST" could transfer a body(which could be an object).
+    Productservice.getProductByName(req.params.name,function (err,product) {//get product data first,then add it to user's cart
                     if(err){
                         return err
                     }

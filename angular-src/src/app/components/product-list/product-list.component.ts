@@ -27,7 +27,8 @@ export class ProductListComponent implements OnInit {
     this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
     });
-  }OnClickaddtocart(product:Product){
+  }
+  OnClickaddtocart(product:Product){//call the Addtocart method in service.After that,reload this page.
 
     this.cartService.Addtocart(product.name,this.user).subscribe(data => {
 
