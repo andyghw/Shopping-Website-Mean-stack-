@@ -14,7 +14,7 @@ export class AuthService {
   registerUser(user){
     let headers=new Headers();
     headers.append('Content-Ytpe','application/json');
-    return this.http.post('http://localhost:3000/users/register',user,{headers:headers}).map(res => res.json());
+    return this.http.post('http://localhost:3000/users/register',user,{headers:headers}).map(res => res.json());//send object to server
   }
 
   authenticateUser(user){
@@ -33,7 +33,7 @@ export class AuthService {
   getProfile(){
     let headers=new Headers();
     this.loadToken();
-    headers.append('Authorization',this.authToken)
+    headers.append('Authorization',this.authToken);
     headers.append('Content-Ytpe','application/json');
     return this.http.get('http://localhost:3000/users/profile',{headers:headers}).map(res => res.json());
   }

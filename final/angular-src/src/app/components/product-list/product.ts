@@ -4,4 +4,5 @@ export class Product{
   description: String;
   location: String;
   image: String;
+  _id:String;
 }

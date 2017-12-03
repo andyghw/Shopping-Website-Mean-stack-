@@ -19,7 +19,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import {SearchFilterPipe} from "./components/search-filter/search-filter.pipe";
 import {DataService} from "./services/data.service";
 import { SearchComponent } from './components/search/search.component';
-
+import {CartComponent} from "./components/cart/cart.component";
+import {CartService} from "./services/cart.service";
+import {QtyComponent} from "./components/cart/addordec";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SearchComponent } from './components/search/search.component';
     ProfileComponent,
     ProductListComponent,
     SearchFilterPipe,
-    SearchComponent
+    SearchComponent,
+    CartComponent,
+    QtyComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +50,13 @@ import { SearchComponent } from './components/search/search.component';
       {path:'register',component:RegisterComponent},
       {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
       {path:'productList',component:ProductListComponent},
-      {path:'search',component:SearchComponent}
+      {path:'search',component:SearchComponent},
+      {path:'cart',component:CartComponent},
+      // {path:'add-to-cart',redirectTo:"/productList"}
     ]),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthGuard,AuthService,DataService],
+  providers: [ValidateService,AuthGuard,AuthService,DataService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
