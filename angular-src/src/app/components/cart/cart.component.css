@@ -6,6 +6,7 @@
 #total,#totalitems{
   float: left;
 }
-#checkout{
+.checkout{
   float: right;
 }
+

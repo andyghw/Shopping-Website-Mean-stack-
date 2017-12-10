@@ -1,8 +1,10 @@
+import { Product } from './../product-list/product';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import {CartService} from "../../services/cart.service";
 import {Router} from "@angular/router";
-import {Product} from "../product-list/product";
+
 import{User} from "../login/user"
 
 @Component({
@@ -16,7 +18,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService:CartService,
               private router:Router) { }
   ngOnInit() {
-    this.cartService.getUser().subscribe(User=> {//get user's information
+    this.cartService.getUser().subscribe(User=> {
       this.user = User.user;
     },
       err=> {
@@ -28,6 +30,7 @@ export class CartComponent implements OnInit {
 
   deleteitem(item){//delete this item permanently in mongodb
   this.cartService.deleteItem(item.name,this.user).subscribe((data=>{
+   
   }));
     window.location.reload(true)//reload this page,meanwhile the array of cartcontent will be reload
   }
@@ -49,7 +52,5 @@ export class CartComponent implements OnInit {
     }
 
   }
-  checkout(){//interface of checkout for Xinglong
-    //you could write your code here
-  }
+  
 }
