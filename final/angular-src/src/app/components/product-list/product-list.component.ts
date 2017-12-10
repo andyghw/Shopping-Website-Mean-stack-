@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import {Product} from "./product";
 import {ProductsService} from "../../services/products.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {CartService} from "../../services/cart.service";
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-product-list',
@@ -19,6 +20,7 @@ export class ProductListComponent implements OnInit {
   password:String;
   products:Product[];
   user:Object;
+
 
   constructor(private flashMessageService: FlashMessagesService,private productsService:ProductsService,private authService:AuthService,private router: Router,private cartService:CartService) { }
 
@@ -42,6 +44,9 @@ export class ProductListComponent implements OnInit {
     });
     window.location.reload(true)
   }
+
+
+
 
 
 }

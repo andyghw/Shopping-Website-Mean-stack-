@@ -1,19 +1,29 @@
 <div class="album text-muted">
-  <div class="container">
-    <ul>
-      <li *ngFor="let product of products|searchFilter:search">
-        <div class="row">
-          <div class="card">
-            <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
-            <h3><a>{{product.name}}</a></h3>
-            <h4>Price: {{product.price}}</h4>
-            <p>Location: {{product.location}}</p>
-            <p class="card-text">Description: {{product.description}}</p>
-          </div>
-        </div>
+  <button class="sortNamebtn" (click)="sortType('name')" [class.active]="sortBy==='name'">name</button>
+  <button class="sortPricebtn1" (click)="sortType('pricel2h')" [class.active]="sortBy==='price'">price low to high</button>
+  <button class="sortPricebtn2" (click)="sortType('priceh2l')" [class.active]="sortBy==='price'">price high to low</button>
+  <button class="sortRatingbtn" (click)="sortType('rating')" [class.active]="sortBy==='rating'">rating</button>
+  <button class="sortclbtn" (click)="clear()">clear</button>
+</div>  
+ 
+<div class="list">
+   <ul class="searchlist">
+      <li *ngFor="let product of products|searchFilter:search" 
+      [class.selected]="product===selectedProduct"
+      (click)="onSelect(product)">
+      <h4>{{product.name}}</h4>
       </li>
     </ul>
-
-
-  </div>
 </div>
+
+    <div class="result">
+    <li *ngFor="let product of result">
+        <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
+        <h3><a>{{product.name}}</a></h3>
+        <h4>Price: {{product.price}}</h4>
+        <p>Location: {{product.location}}</p>
+        <p>rating:{{product.rating}}</p>
+        <p class="card-text">Description: {{product.description}}</p>
+    </li>
+  </div>
+

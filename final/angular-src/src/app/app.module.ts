@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from "@angular/router";
-
+import {WeatherService} from "./services/weather.service";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,6 +22,9 @@ import { SearchComponent } from './components/search/search.component';
 import {CartComponent} from "./components/cart/cart.component";
 import {CartService} from "./services/cart.service";
 import {QtyComponent} from "./components/cart/addordec";
+import {FlashMessagesService} from "angular2-flash-messages";
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import {ProductsService} from "./services/products.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import {QtyComponent} from "./components/cart/addordec";
     SearchFilterPipe,
     SearchComponent,
     CartComponent,
-    QtyComponent
+    QtyComponent,
+    ProductdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -52,11 +56,12 @@ import {QtyComponent} from "./components/cart/addordec";
       {path:'productList',component:ProductListComponent},
       {path:'search',component:SearchComponent},
       {path:'cart',component:CartComponent},
+      {path: 'detail/:_id', component: ProductdetailComponent}
       // {path:'add-to-cart',redirectTo:"/productList"}
     ]),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthGuard,AuthService,DataService,CartService],
+  providers: [ValidateService,AuthGuard,AuthService,DataService,CartService,FlashMessagesService,ProductsService,WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
