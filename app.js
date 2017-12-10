@@ -27,6 +27,8 @@ const users = require('./routes/users');
 const products=require('./routes/products');
 
 const carts=require("./routes/carts");
+
+const bookmarks=require("./routes/bookmarks");
 //Port num
 const port=3000;
 
@@ -61,6 +63,7 @@ require('./config/passport')(passport);
  app.use('/users',users);
 app.use('/products',products);
 app.use('/carts',carts);
+app.use('/bookmarks',bookmarks);
 
 //use view engine
 var engines = require('consolidate');

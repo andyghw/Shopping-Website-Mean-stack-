@@ -40,20 +40,34 @@ module.exports.addItemInUser=function (user,product,callback) {//push an item to
         },callback
     );
 };
-module.exports.updateItemInUser=function (user,product,callback) {
-    // User.updateOne(
-    //     {name:user.name,"cartcontent.name":product.name},//this statement never worked in js,but worked well in mongoshell.
-    //     {
-    //         $inc:{
-    //             cartcontent:{
-    //                 Qty: 1
-    //             }
-    //         }
-    //
-    //     },callback
-    // );
-    //User.update({"name":"Ruixin Li"}, {$inc:{"s":3}},callback);
+module.exports.addBookmarkInUser=function (user,product,callback) {
+    User.update(
+        {_id:user.id},
+        {$push:{
+            bookmark:{
+                image:product.image,
+                name:product.name,
+                url:"/detail/"+product._id
+            }
+        }
+        },callback
+    );
+
 };
+// module.exports.updateItemInUser=function (user,product,callback) {
+//     // User.updateOne(
+//     //     {name:user.name,"cartcontent.name":product.name},//this statement never worked in js,but worked well in mongoshell.
+//     //     {
+//     //         $inc:{
+//     //             cartcontent:{
+//     //                 Qty: 1
+//     //             }
+//     //         }
+//     //
+//     //     },callback
+//     // );
+//     //User.update({"name":"Ruixin Li"}, {$inc:{"s":3}},callback);
+// };
 
 module.exports.checkItem=function (productname,username,callback) {//check if user has this item in his cart
     const  query={productname: productname};
@@ -63,6 +77,12 @@ module.exports.deleteItem=function (productName,name,callback) {//delete an obje
     User.update(
         {"name":name},
         {$pull:{"cartcontent":{"name":productName}}
+        },callback);
+};
+module.exports.deleteBookmark=function (productName,name,callback) {//delete an object in a particular field.
+    User.update(
+        {"name":name},
+        {$pull:{"bookmark":{"name":productName}}
         },callback);
 };
 module.exports.comparePassword=function (candidatePassword,hash,callback) {

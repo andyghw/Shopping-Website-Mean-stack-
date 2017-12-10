@@ -28,6 +28,11 @@ const UserSchema=mongoose.Schema({
         location:String,
         image:String,
         Qty:String
+    },
+    bookmark:{
+        name:String,
+        url:String,
+        image:String
     }
 });
 
