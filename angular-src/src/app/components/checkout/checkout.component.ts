@@ -1,11 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
-export class Buyer{
-  constructor(
-  name:string,
-  phone:number,
-  ){}
-}
+import { Customer } from './customer';
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-checkout',
@@ -13,12 +9,23 @@ export class Buyer{
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  buyer:Buyer;
+  customer= new Customer();
+ 
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private flashMessagesService:FlashMessagesService
+  ) { }
 
   ngOnInit() {
   }
 
-  
+  onSubmit(){
+    this.flashMessagesService.show('Your order is placed ! Thank you to choose Big Hammer !',{cssClass:'alert-success',timeout:6000});
+    this.router.navigate(['']);
+  }
+
+
+
+ 
 }
