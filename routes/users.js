@@ -85,56 +85,6 @@ router.put('/add-to-cart/:name',(req, res, next) =>{// this way could get data b
                         }
                     });
                 });
-    // User.checkItem(req.params.name,req.body.name,function(err,user){
-    //     if(err){
-    //         return err
-    //     }
-    //     if(!user.length){
-    //         productservice.getProductByName(req.params.name,function (err,product) {
-    //             if(err){
-    //                 return err
-    //             }
-    //             let user=new User({
-    //                 name:req.body.name,
-    //                 _id:req.body._id,
-    //                 email:req.body.email,
-    //                 username:req.body.username,
-    //                 password:req.body.password,
-    //                 cartcontent:req.body.cartcontent
-    //             });
-    //
-    //             User.addItemInUser(user,product,function (err) {
-    //                 if(err){
-    //                     return err
-    //                 }
-    //             });
-    //         });
-    //         console.log("item is not exist in db");
-    //     }else{
-    //         console.log("item exist in db");
-    //         productservice.getProductByName(req.params.name,function (err,product) {
-    //             if(err){
-    //                 return err
-    //             }
-    //             let user=new User({
-    //                 name:req.body.name,
-    //                 _id:req.body._id,
-    //                 email:req.body.email,
-    //                 username:req.body.username,
-    //                 password:req.body.password,
-    //                 cartcontent:req.body.cartcontent
-    //             });
-    //
-    //             User.updateItemInUser(user,product,function (err) {
-    //                 if(err){
-    //                     return err
-    //                 }
-    //
-    //             });
-    //
-    //         });
-    //
-    //     }
 });
 //add to bookmark
 router.put('/add-to-bookmark/:name',(req, res, next) =>{

@@ -78,7 +78,6 @@ import { OrdersComponent } from './components/orders/orders.component';
       {path:'contact',component:ContactComponent},
       {path:'orders',component:OrdersComponent},
       {path:'location',component:LocationComponent}
-      // {path:'add-to-cart',redirectTo:"/productList"}
     ]),
     FlashMessagesModule
   ],

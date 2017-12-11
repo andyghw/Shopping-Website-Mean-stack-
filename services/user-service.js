@@ -40,7 +40,7 @@ module.exports.addItemInUser=function (user,product,callback) {//push an item to
         },callback
     );
 };
-module.exports.addBookmarkInUser=function (user,product,callback) {
+module.exports.addBookmarkInUser=function (user,product,callback) {//push an item to user's bookmark in mongodb
     User.update(
         {_id:user.id},
         {$push:{
@@ -68,20 +68,6 @@ module.exports.addOrderInUser=function (user,product,callback) {
     );
 
 };
-// module.exports.updateItemInUser=function (user,product,callback) {
-//     // User.updateOne(
-//     //     {name:user.name,"cartcontent.name":product.name},//this statement never worked in js,but worked well in mongoshell.
-//     //     {
-//     //         $inc:{
-//     //             cartcontent:{
-//     //                 Qty: 1
-//     //             }
-//     //         }
-//     //
-//     //     },callback
-//     // );
-//     //User.update({"name":"Ruixin Li"}, {$inc:{"s":3}},callback);
-// };
 
 module.exports.checkItem=function (productname,username,callback) {//check if user has this item in his cart
     const  query={productname: productname};
