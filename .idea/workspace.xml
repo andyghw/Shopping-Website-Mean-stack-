@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be64b0c9-66bc-4269-b50b-81f1621368c2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/services/bookmark-service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/services/cart-service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/services/order-service.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/app.module.ts" afterPath="$PROJECT_DIR$/angular-src/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/components/bookmark/bookmark.component.ts" afterPath="$PROJECT_DIR$/angular-src/src/app/components/bookmark/bookmark.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/product.js" afterPath="$PROJECT_DIR$/models/product.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/bookmarks.js" afterPath="$PROJECT_DIR$/routes/bookmarks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/product-service.js" afterPath="$PROJECT_DIR$/services/product-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/user-service.js" afterPath="$PROJECT_DIR$/services/user-service.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +96,8 @@
       <file leaf-file-name="product-service.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/product-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+            <state relative-caret-position="119">
+              <caret line="7" column="88" lean-forward="true" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -418,12 +407,12 @@
       <workItem from="1512873705048" duration="1247000" />
       <workItem from="1512876398391" duration="279000" />
       <workItem from="1512960912258" duration="5155000" />
-      <workItem from="1513028022324" duration="438000" />
+      <workItem from="1513028022324" duration="543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67315000" />
+    <option name="totallyTimeSpent" value="67420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="27" y="27" width="1440" height="826" extended-state="0" />
@@ -794,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/product-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+        <state relative-caret-position="119">
+          <caret line="7" column="88" lean-forward="true" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
           <folding />
         </state>
       </provider>
