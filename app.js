@@ -27,6 +27,10 @@ const users = require('./routes/users');
 const products=require('./routes/products');
 
 const carts=require("./routes/carts");
+
+const bookmarks=require("./routes/bookmarks");
+
+const orders=require("./routes/orders");
 //Port num
 const port=3000;
 
@@ -58,9 +62,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
 
- app.use('/users',users);
+app.use('/users',users);
 app.use('/products',products);
 app.use('/carts',carts);
+app.use('/bookmarks',bookmarks);
+app.use('/orders',orders);
 
 //use view engine
 var engines = require('consolidate');

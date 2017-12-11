@@ -135,6 +135,54 @@ router.put('/add-to-cart/:name',(req, res, next) =>{// this way could get data b
     //         });
     //
     //     }
+});
+//add to bookmark
+router.put('/add-to-bookmark/:name',(req, res, next) =>{
+    Productservice.getProductByName(req.params.name,function (err,product) {
+        if(err){
+            return err
+        }
+        let user=new User({
+            name:req.body.name,
+            _id:req.body._id,
+            email:req.body.email,
+            username:req.body.username,
+            password:req.body.password,
+            cartcontent:req.body.cartcontent
+        });
+
+        Userservice.addBookmarkInUser(user,product,function (err) {
+            if(err){
+                return err
+            }
+        });
+    });
+
+
+
+});
+
+//add to order
+router.put('/add-to-order/:name',(req, res, next) =>{
+    Productservice.getProductByName(req.params.name,function (err,product) {
+        if(err){
+            return err
+        }
+        let user=new User({
+            name:req.body.name,
+            _id:req.body._id,
+            email:req.body.email,
+            username:req.body.username,
+            password:req.body.password,
+            cartcontent:req.body.cartcontent
+        });
+
+        Userservice.addOrderInUser(user,product,function (err) {
+            if(err){
+                return err
+            }
+        });
+    });
 
 
 

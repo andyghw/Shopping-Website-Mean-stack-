@@ -6,7 +6,7 @@
       <div class="card">
         <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
         <button (click)="OnClickaddtocart(product)">add to cart</button>
-        <h3><a>{{product.name}}</a></h3>
+        <h3><a [routerLink]="['/detail', product._id]">{{product.name}}</a></h3>
         <h4>Price: {{product.price}}</h4>
         <p>Location: {{product.location}}</p>
         <p class="card-text">Description: {{product.description}}</p>

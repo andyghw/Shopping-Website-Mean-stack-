@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from "@angular/router";
@@ -22,6 +23,18 @@ import { SearchComponent } from './components/search/search.component';
 import {CartComponent} from "./components/cart/cart.component";
 import {CartService} from "./services/cart.service";
 import {QtyComponent} from "./components/cart/addordec";
+import {FlashMessagesService} from "angular2-flash-messages";
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import {ProductsService} from "./services/products.service";
+import {BookmarkComponent} from "./components/bookmark/bookmark.component";
+import {BookmarkService} from "./services/bookmark.service";
+import {WeatherService} from "./services/weather.service";
+import { LocationComponent } from './components/location/location.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { OrdersService } from './services/orders.service';
+import { OrdersComponent } from './components/orders/orders.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +49,14 @@ import {QtyComponent} from "./components/cart/addordec";
     SearchFilterPipe,
     SearchComponent,
     CartComponent,
-    QtyComponent
+    QtyComponent,
+    ProductdetailComponent,
+    BookmarkComponent,
+    CheckoutComponent,
+    LocationComponent,
+    ContactComponent,
+    OrdersComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -52,11 +72,18 @@ import {QtyComponent} from "./components/cart/addordec";
       {path:'productList',component:ProductListComponent},
       {path:'search',component:SearchComponent},
       {path:'cart',component:CartComponent},
+      {path: 'detail/:_id', component: ProductdetailComponent},
+      {path:'bookmark',component:BookmarkComponent},
+      {path:'checkout',component:CheckoutComponent},
+      {path:'contact',component:ContactComponent},
+      {path:'orders',component:OrdersComponent}
       // {path:'add-to-cart',redirectTo:"/productList"}
     ]),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthGuard,AuthService,DataService,CartService],
+  providers: [ValidateService,AuthGuard,AuthService,DataService,
+              CartService,FlashMessagesService,ProductsService,
+              BookmarkService,WeatherService,OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
