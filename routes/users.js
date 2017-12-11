@@ -8,7 +8,7 @@ const Productservice=require('../services/product-service');
 const Userservice=require('../services/user-service');
 const User=require('../models/user');
 //register
-router.post('/register', (req,res,next) =>{
+router.post('/register', (req,res,next) =>{//register method:pass user object to adduser method
     let newUser = new User({
         name:req.body.name,
         email:req.body.email,
@@ -40,7 +40,7 @@ router.post('/authenticate', (req, res, next) => {
             if(err) throw err;
             if(isMatch){
                 const token = jwt.sign(user.toJSON(), config.secret, {
-                    expiresIn: 604800 // 1 week
+                    expiresIn: 604800 // token expires after 1 week
                 });
 
                 res.json({

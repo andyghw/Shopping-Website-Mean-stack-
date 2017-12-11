@@ -7,7 +7,7 @@ export class AuthGuard implements CanActivate{
   constructor(private router:Router,
               private  authService:AuthService){}
 
-  canActivate(){
+  canActivate(){//if the client didn't login,jump to login page
     if(this.authService.loggedIn()){
       return true;
     }

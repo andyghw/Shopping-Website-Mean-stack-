@@ -14,7 +14,7 @@ export class OrdersComponent implements OnInit {
   constructor(private ordersService:OrdersService) { }
 
   ngOnInit() {
-    this.ordersService.getUser().subscribe(User=>{
+    this.ordersService.getUser().subscribe(User=>{//get user information
       this.user=User.user;
     },
     err=>{

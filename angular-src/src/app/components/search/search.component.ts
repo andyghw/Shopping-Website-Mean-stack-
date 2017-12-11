@@ -12,7 +12,7 @@ import { Pipe } from "@angular/core";
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
   providers:[ProductsService]
-  
+
 })
 
 export class SearchComponent implements OnInit {
@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   products:Product[]=[];
   result:Product[]=[];
   selectedProduct:Product;
-  
+
 
 
   constructor(private productsService:ProductsService,private  dataService:DataService) { }
@@ -30,36 +30,36 @@ export class SearchComponent implements OnInit {
       this.search=mes
     })
     this.productsService.getProductList().subscribe(res=>this.products=res);
-    
+
   }
 
   load(i:Product){
     this.result.push(i);
   }
- 
+
 
   sortType(sort:string){
-    
-    if(sort==='name'){
+
+    if(sort==='name'){//check if client wants to sort by which sort criteria
       this.result.sort(this.sortByName);
-      
+
     }
     if(sort==='pricel2h'){
       this.result.sort(this.sortByPrice1)
-      
+
     }
     if(sort==='priceh2l'){
       this.result.sort(this.sortByPrice2)
     }
     if(sort==='rating'){
       this.result.sort(this.sortByRating)
-      
+
     }
   }
 
-  sortByName(p1:Product,p2:Product){
-    if(p1.name > p2.name)return 1
-      else if(p1.name===p2.name)return 0
+  sortByName(p1:Product,p2:Product){// sort method
+    if(p1.name > p2.name)return 1;
+      else if(p1.name===p2.name)return 0;
         else return -1
   }
 
@@ -72,7 +72,7 @@ export class SearchComponent implements OnInit {
   }
 
   sortByRating(p1:Product,p2:Product){
-    
+
     return parseFloat(p2.rating)-parseFloat(p1.rating);
   }
 
