@@ -1,30 +1,15 @@
 {
-  "name": "final",
+  "name": "h",
   "version": "1.0.0",
-  "description": "bighammer",
-  "main": "app.js",
+  "description": "",
+  "main": "extra.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "bcryptjs": "*",
-    "body-parser": "*",
-    "connect-mongo": "^2.0.0",
-    "consolidate": "^0.15.0",
-    "cors": "*",
-    "ejs": "^2.5.7",
-    "express": "*",
-    "express-session": "^1.15.6",
-    "jsonwebtoken": "*",
-    "mongoose": "*",
-    "mustache": "^2.3.0",
-    "passport": "*",
-    "passport-jwt": "*"
-  },
-  "author": "Hanwen Guo",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@angular/cli": "^1.6.0"
+  "dependencies": {
+    "connect": "^3.6.5",
+    "serve-static": "^1.13.1"
   }
 }

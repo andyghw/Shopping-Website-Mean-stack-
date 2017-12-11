@@ -1,0 +1,53 @@
+[
+{ "firstName":"John" , 
+  "lastName":"Doe" ,
+  "phoneNum" : "541-968-4346",
+  "address" :"fenway 80",
+  "birthday" : "1990-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191"
+},
+
+
+{  "firstName":"Amy" , 
+  "lastName":"Dan" ,
+  "phoneNum" : "641-968-4346",
+  "address" :"fenway 70",
+  "birthday" : "1992-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191"},
+
+
+
+{  "firstName":"Harry" , 
+  "lastName":"Kenny" ,
+  "phoneNum" : "841-968-4346",
+  "address" :"fenway 78",
+  "birthday" : "1890-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191" },
+
+{  "firstName":"Mike" , 
+  "lastName":"Kai" ,
+  "phoneNum" : "841-968-4346",
+  "address" :"fenway 78",
+  "birthday" : "1890-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191" },
+
+  {  "firstName":"Lily" , 
+  "lastName":"Joe" ,
+  "phoneNum" : "241-968-4346",
+  "address" :"fenway 78",
+  "birthday" : "1890-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191" },
+
+  {  "firstName":"Sunny" , 
+  "lastName":"Amy" ,
+  "phoneNum" : "441-968-4346",
+  "address" :"fenway 78",
+  "birthday" : "1890-07-23",
+  "image": "https://secure.gravatar.com/avatar/fef2fdac47039ee9e19480d65ee70191" }
+
+
+
+]
+
+
+
