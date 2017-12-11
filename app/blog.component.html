@@ -1,0 +1,104 @@
+<br>
+<br>
+<div class="topnav">
+  <a href="#">ELk Blog</a>&nbsp;
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="clean-searchbox">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input class="searchfield" id="searchbox" type="text" placeholder="Search">
+
+        <i class="fa fa-search"></i>
+
+    </form>
+  </div>
+</div>
+<br>
+
+
+<div id="links">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#">ELk Blog</a> &nbsp;&nbsp;Yixuan Li&nbsp;&nbsp;Yawei Wang&nbsp;&nbsp;
+
+    <i class="fa fa-twitter"></i>&nbsp;
+    <i class="fa fa-youtube"></i>&nbsp;
+    <i class="fa fa-google-plus"></i>&nbsp;
+    <i class="fa fa-pinterest"></i>&nbsp;
+    <i class="fa fa-linkedin"></i>&nbsp;
+    <i class="fa fa-instagram"></i>&nbsp;
+    <i class="fa fa-github"></i>&nbsp;
+
+</div>
+
+<div id="blogpage">
+
+  <div id="blog1" *ngFor="let blog of blogs">
+    <p id="title1">{{blog.title}}</p>
+    <p id="author1">{{blog.author}}</p>
+    <p id="detail1">{{blog.detail}}</p>
+    <p id="postDate1">{{blog.postDate | date:"M/d/yyyy hh:mm a"}}</p>
+    <button (click)="attach(blog)">Edit</button>
+    <p></p>
+  </div>
+</div>
+
+
+<div class="content">
+    <div class="text">
+        <h4>&nbsp;Post my new blog:</h4>
+    </div>
+    <div class="text">
+        <label for="title">&nbsp;Title: </label>
+        <input [(ngModel)]="newtitle" type="text" id="title" class="txt">
+        <label for="authorname">&nbsp;Author: </label>
+        <input [(ngModel)]="newauthor" type="text" id="authorname" class="txt">
+    </div>
+    <div class="text">
+        <textarea rows="20" cols="100" [(ngModel)]="newarea" id="message" class="txt"></textarea>
+    </div>
+    <div class="btn">
+        <button (click)="upload()">{{bt}}</button>
+        <p></p>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div id="messageList" class="messageList">
+    </div>
+</div>
+
+<footer>
+  <div class="widewrapper footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-widget">
+          <h3> <i class="fa fa-user"></i>About</h3>
+
+          <p>This is the fifth assignment.</p>
+        </div>
+
+        <div class="col-md-4 footer-widget">
+          <h3> <i class="fa fa-pencil"></i> Recent Post</h3>
+          <ul class="clean-list">
+            <li><a id="recent-post" href="#recent"></a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 footer-widget">
+          <h3> <i class="fa fa-envelope"></i>Contact Us</h3>
+
+          <p>Yawei Wang  Northeastern University</p>
+          <p>Yixuan Li   Northeastern University</p>
+          <div class="footer-widget-icon">
+            <i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-google"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</footer>
