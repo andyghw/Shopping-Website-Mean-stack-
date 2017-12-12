@@ -652,11 +652,11 @@
 @Pipe({
   name: &#x27;searchFilter&#x27;
 })
-export class SearchFilterPipe implements PipeTransform {
+export class SearchFilterPipe implements PipeTransform {//using pipe to filter items
 
   transform(products: any, search: any): any {
     if (search &#x3D;&#x3D;&#x3D; undefined) {
-      return products;          //当搜索为空时，返回所有产品
+      return products;          //if the result is null,all items will be returned
     }else{
       return products.filter((product) &#x3D;&gt; {
         return product.name.toLowerCase().includes(search.toLowerCase());

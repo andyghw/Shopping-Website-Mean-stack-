@@ -22,14 +22,17 @@ export class SearchComponent implements OnInit {
   selectedProduct:Product;
 
 
-
   constructor(private productsService:ProductsService,private  dataService:DataService) { }
 
   ngOnInit() {
     this.dataService.currentMessage.subscribe(mes=>{
       this.search=mes
     })
-    this.productsService.getProductList().subscribe(res=>this.products=res);
+    this.productsService.getProductList().subscribe(res=>
+      this.products=res);
+
+
+
 
   }
 
@@ -80,6 +83,7 @@ export class SearchComponent implements OnInit {
     this.selectedProduct = product;
     this.result.push(this.selectedProduct);
   }
+
 
   clear(){
     this.result=[];

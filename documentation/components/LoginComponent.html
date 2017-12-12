@@ -888,10 +888,10 @@ export class LoginComponent implements OnInit {
       username:this.username,
       password:this.password
     };
-    this.authService.authenticateUser(user).subscribe(data&#x3D;&gt;{
+    this.authService.authenticateUser(user).subscribe(data&#x3D;&gt;{//using authentication to check if the client is valid
       if(data.success){
       this.authService.storeUserData(data.token,data.user);
-      this.flashMessagesService.show(&#x27;Logged in successfully!&#x27;,{cssClass:&#x27;alert-success&#x27;,timeout:6000});
+      this.flashMessagesService.show(&#x27;Logged in successfully!&#x27;,{cssClass:&#x27;alert-success&#x27;,timeout:6000});//show flash message
         this.router.navigate([&#x27;/dashboard&#x27;]);
       }
       else{

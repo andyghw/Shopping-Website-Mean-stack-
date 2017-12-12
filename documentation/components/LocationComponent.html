@@ -751,7 +751,7 @@ export class LocationComponent implements OnInit {
   img:any;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {//use google API map service to display location of user
     navigator.geolocation.getCurrentPosition(position&#x3D;&gt;{
       let latitude  &#x3D; position.coords.latitude;
       let longitude &#x3D; position.coords.longitude;

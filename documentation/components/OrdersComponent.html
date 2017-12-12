@@ -784,7 +784,7 @@ export class OrdersComponent implements OnInit {
   constructor(private ordersService:OrdersService) { }
 
   ngOnInit() {
-    this.ordersService.getUser().subscribe(User&#x3D;&gt;{
+    this.ordersService.getUser().subscribe(User&#x3D;&gt;{//get user information
       this.user&#x3D;User.user;
     },
     err&#x3D;&gt;{

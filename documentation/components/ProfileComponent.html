@@ -792,7 +792,7 @@ export class ProfileComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile &#x3D;&gt;{
+    this.authService.getProfile().subscribe(profile &#x3D;&gt;{//get user information from mongodb
       this.user&#x3D;profile.user;
     },
 

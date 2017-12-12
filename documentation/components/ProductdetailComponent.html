@@ -1131,7 +1131,7 @@ export class ProductdetailComponent implements  OnInit{
 
   ngOnInit(){
     this.route.paramMap
-      .switchMap((params: ParamMap) &#x3D;&gt; this.productsService.getProduct(params.get(&#x27;_id&#x27;)))
+      .switchMap((params: ParamMap) &#x3D;&gt; this.productsService.getProduct(params.get(&#x27;_id&#x27;)))//get product data by calling getproduct method in productservice
       .subscribe(product &#x3D;&gt; this.product &#x3D; product);
     this.authService.getProfile().subscribe(profile &#x3D;&gt;{
       this.user&#x3D;profile.user;
@@ -1146,14 +1146,14 @@ export class ProductdetailComponent implements  OnInit{
   }
 
 
-  OnClickaddtobookmark(product:Product){
+  OnClickaddtobookmark(product:Product){//add items to bookmark in mongodb by Addtobookmark method in bookmarkservice
     this.bookmarkService.Addtobookmark(product.name,this.user).subscribe(data &#x3D;&gt; {
     });
     window.location.reload(true)
 
 }
 
-  
+
 
 }
 </code></pre>
@@ -1164,9 +1164,9 @@ export class ProductdetailComponent implements  OnInit{
 &lt;div class&#x3D;&quot;row&quot;&gt;
   &lt;div class&#x3D;&quot;card&quot;&gt;
     &lt;img data-src&#x3D;&quot;{{product.image}}&quot; alt&#x3D;&quot;Card image cap&quot; style&#x3D;&quot;width: 300px;height: 250px&quot;&gt;
-    &lt;button (click)&#x3D;&quot;OnClickaddtocart(product)&quot;&gt;add to cart&lt;/button&gt;
-    &lt;button (click)&#x3D;&quot;OnClickaddtobookmark(product)&quot;&gt;add to bookmark&lt;/button&gt;
-    &lt;button [routerLink]&#x3D;&quot;[&#x27;/contact&#x27;]&quot;&gt;contact&lt;/button&gt;
+    &lt;button (click)&#x3D;&quot;OnClickaddtocart(product)&quot; class&#x3D;&quot;btn btn-outline-primary&quot;&gt;add to cart&lt;/button&gt;
+    &lt;button (click)&#x3D;&quot;OnClickaddtobookmark(product)&quot; class&#x3D;&quot;btn btn-outline-primary&quot;&gt;add to bookmark&lt;/button&gt;
+    &lt;button [routerLink]&#x3D;&quot;[&#x27;/contact&#x27;]&quot; class&#x3D;&quot;btn btn-outline-primary&quot;&gt;contact&lt;/button&gt;
     &lt;h3&gt;&lt;a&gt;{{product.name}}&lt;/a&gt;&lt;/h3&gt;
     &lt;h4&gt;Price: {{product.price}}&lt;/h4&gt;
     &lt;p&gt;Location: {{product.location}}&lt;/p&gt;
@@ -1199,7 +1199,7 @@ export class ProductdetailComponent implements  OnInit{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="card">    <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">    <button (click)="OnClickaddtocart(product)">add to cart</button>    <button (click)="OnClickaddtobookmark(product)">add to bookmark</button>    <button [routerLink]="[\'/contact\']">contact</button>    <h3><a>{{product.name}}</a></h3>    <h4>Price: {{product.price}}</h4>    <p>Location: {{product.location}}</p>    <p class="card-text">Description: {{product.description}}</p>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="card">    <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">    <button (click)="OnClickaddtocart(product)" class="btn btn-outline-primary">add to cart</button>    <button (click)="OnClickaddtobookmark(product)" class="btn btn-outline-primary">add to bookmark</button>    <button [routerLink]="[\'/contact\']" class="btn btn-outline-primary">contact</button>    <h3><a>{{product.name}}</a></h3>    <h4>Price: {{product.price}}</h4>    <p>Location: {{product.location}}</p>    <p class="card-text">Description: {{product.description}}</p>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookmarkComponent', 'selector': 'app-bookmark'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CheckoutComponent', 'selector': 'app-checkout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OrdersComponent', 'selector': 'app-orders'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductdetailComponent', 'selector': 'app-productdetail'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'QtyComponent', 'selector': 'Qty-add-dec'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProductdetailComponent'};

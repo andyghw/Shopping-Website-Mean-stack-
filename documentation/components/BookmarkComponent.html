@@ -953,10 +953,10 @@ import{User} from &quot;../login/user&quot;
 export class BookmarkComponent implements OnInit {
   user:User;
   search:any;
-  constructor(private bookmarkService:BookmarkService) { }
+  constructor(private bookmarkService:BookmarkService) { }//add service in constructor
 
-  ngOnInit() {
-    this.bookmarkService.getUser().subscribe(User&#x3D;&gt; {//get user&#x27;s information
+  ngOnInit() {//get user&#x27;s information
+    this.bookmarkService.getUser().subscribe(User&#x3D;&gt; {
         this.user &#x3D; User.user;
       },
       err&#x3D;&gt; {
@@ -971,7 +971,7 @@ export class BookmarkComponent implements OnInit {
     window.location.reload(true)
   }
 
-  gotodetail(item){
+  gotodetail(item){//jump to product detail page
     window.location.href &#x3D; item.url;
   }
 
